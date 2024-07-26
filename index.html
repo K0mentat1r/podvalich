@@ -70,8 +70,8 @@
             </div>
         </article>
         <article id="section-about">
-            <h1 class="section-about__name">О НАС</h1>
-            <p class="section-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной. А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
+            <h1 class="section-about__name orange-text">О НАС</h1>
+            <p class="section-text orange-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной. А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
         </article>
         <article id="section-city">
             <div class="section-name-container">
@@ -80,31 +80,34 @@
             </div>
             <div class="section-content">
                 <div class="section-city__img-container section-city__left">
-                    <img src="" alt="">
+                    <img src="img/city_temple.png" alt="">
                     <div class="img-decript">
                         <p class="img-decript__text">ЯПОНСКИЙ ХРАМ</p>
                     </div>
                 </div>
-                <div class="section-city__img-container section-city__right">
-                    <img src="" alt="">
-                    <div class="img-decript">
-                        <p class="img-decript__text">БАР “БОЧКА”</p>
+                <div class="section-city__right">
+                    <div class="section-city__img-container">
+                        <img src="img/city_bar.png" alt="">
+                        <div class="img-decript">
+                            <p class="img-decript__text">БАР “БОЧКА”</p>
+                        </div>
                     </div>
-                </div>
-                <div class="section-city__img-container section-city__right">
-                    <img src="" alt="">
-                    <div class="img-decript">
-                        <p class="img-decript__text">ТРЕЙД-ХОЛЛ</p>
+                    <div class="section-city__img-container ">
+                        <img src="img/city_tradehall.png" alt="">
+                        <div class="img-decript">
+                            <p class="img-decript__text">ТРЕЙД-ХОЛЛ</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </article>
         <article id="section-parts" class="needMoreHeight" >
+            <img src="img/section-parts_background.png" class="bg-img">
             <div class="section-name-container">
                 <h1 class="section-name-container__name">НАШ ГОРОД</h1>
                 <div class="section-name-container__right-part"></div>
             </div>
-            <div class="section-parts__content-up">
+            <div id="section-parts__content-up">
                 <div class="section-parts__left">
                     <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(0)">
                         <h4 class="section-parts__btn-name">город</h4>
@@ -152,6 +155,7 @@
                         pastNumOfBtn = numOfBtn;
                     }
                 </script>
+                
             </div>
             <div class="section-parts__content-down">
                 <p class="content-down__text">А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
@@ -337,8 +341,8 @@
         for(i = 0;i < articleHeight.length;i++){
             articleHeight[i].style.width = document.documentElement.clientWidth + "px";
             articlesNeedsMoreHeight[i].style.height = articleHeight[i].offsetHeight + "px";
-            advantages.style.height = articleHeight[i].offsetHeight + 30 + "px"; //ставим на 20 px больше, чем section-hello высоту для преймуществ (#advantages)
         }
+        advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 20 px больше, чем section-hello высоту для преймуществ (#advantages)
     },false);
 </script>
 </html>
