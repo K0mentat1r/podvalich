@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="header__links">
+            <a href="#section-about" class="links__links-to-sect">О НАС</a>
+            <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
+            <a href="#section-how-to-come-in" class="links__links-to-sect">ВЛАСТЬ</a>
+            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
+            <a href="#section-how-to-come-in" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
+            <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
+        </div>
+        <div class="burger-menu">
+            <div class="in-burger"></div>
+        </div>
+    </header>
+    <header id="second-header">
+        <div class="header__links">
+            <a href="#section-about" class="links__links-to-sect">О НАС</a>
+            <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
+            <a href="#section-how-to-come-in" class="links__links-to-sect">ВЛАСТЬ</a>
+            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
+            <a href="#section-how-to-come-in" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
+            <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
+        </div>
+        <div class="burger-menu">
+            <div class="in-burger"></div>
+        </div>
+    </header>
+    <div id="menu" class="popup">
+        <div id="menuContainer" class="popup__container">
+            <div id="menuBody" class="popup__body">
+                
+            </div>
+        </div>
+    </div>
+    <div id="blocks">
+        <article id="section-hello" class="needMoreHeight">
+            <img src="img/section-hello_background.png" class="bg-img">
+            <div class="grid-left">
+                <div class="section-hello__content-container">
+                    <img src="img/logo.png" alt="" class="section-hello__img"> 
+                    <h1 class="section-hello__text white-text">сообщество "подвалич"</h1>
+                    <button class="section-hello__discord-btn"><p class="white-text">Ссылка на дс</p></button>
+                </div>
+            </div>
+            <div id="advantages">
+                <div id="advantages__container">
+                    <div class="advantages__body">
+                        <img src="img/icons/adv-icon1.png" class="advantages__icon">
+                        <p class="advantages__text">Красивый город</p>
+                    </div>
+                    <div class="advantages__body">
+                        <img src="img/icons/adv-icon2.png" class="advantages__icon">
+                        <p class="advantages__text">Безопасность</p>
+                    </div>
+                    <div class="advantages__body">
+                        <img src="img/icons/adv-icon3.png" class="advantages__icon">
+                        <p class="advantages__text">Доступность для каждого</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="section-about">
+            <h1 class="section-about__name">О НАС</h1>
+            <p class="section-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной. А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
+        </article>
+        <article id="section-city">
+            <div class="section-name-container">
+                <h1 class="section-name-container__name">НАШ ГОРОД</h1>
+                <div class="section-name-container__right-part"></div>
+            </div>
+            <div class="section-content">
+                <div class="section-city__img-container section-city__left">
+                    <img src="" alt="">
+                    <div class="img-decript">
+                        <p class="img-decript__text">ЯПОНСКИЙ ХРАМ</p>
+                    </div>
+                </div>
+                <div class="section-city__img-container section-city__right">
+                    <img src="" alt="">
+                    <div class="img-decript">
+                        <p class="img-decript__text">БАР “БОЧКА”</p>
+                    </div>
+                </div>
+                <div class="section-city__img-container section-city__right">
+                    <img src="" alt="">
+                    <div class="img-decript">
+                        <p class="img-decript__text">ТРЕЙД-ХОЛЛ</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="section-parts" class="needMoreHeight" >
+            <div class="section-name-container">
+                <h1 class="section-name-container__name">НАШ ГОРОД</h1>
+                <div class="section-name-container__right-part"></div>
+            </div>
+            <div class="section-parts__content-up">
+                <div class="section-parts__left">
+                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(0)">
+                        <h4 class="section-parts__btn-name">город</h4>
+                    </button>
+                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(1)">
+                        <h4 class="section-parts__btn-name">клан</h4>
+                    </button>
+                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(2)">
+                        <h4 class="section-parts__btn-name">гильдия</h4>
+                    </button>
+                </div>
+                <div class="section-parts__right">
+                    <p id="aboutPart">нажмите на одну из кнопок, чтобы увидеть информацию</p>
+                    <!-- текст для города, клана и гильдии -->
+                </div>
+                <!-- скрипт для кнопок -->
+                <script>
+                    const sectionParts_text = { //весь текст, который будем менять по условию
+                        0:"город",
+                        1:"клан",
+                        2:"гильдия",
+                        default:"нажмите на одну из кнопок, чтобы увидеть информацию"
+                    };
+                    const btns = document.getElementsByClassName("section-parts__btn");
+                    let pastNumOfBtn = null;
+
+                    function replaceTextForSectPart(numOfBtn){
+                        if (pastNumOfBtn == null){ //если скрипт запустился в первый раз ставим какое нибудь значение != номеру нажатой кнопки
+                            if (numOfBtn < btns.length-1){
+                                pastNumOfBtn = numOfBtn+1;
+                            }
+                            else if (numOfBtn == btns.length-1){
+                                pastNumOfBtn=numOfBtn-1;
+                            }
+                        } //если нажимаем 2 раза подряд на одну кнопку, то мы ее типо выключаем и значение ставится стандартное
+                        if (pastNumOfBtn == numOfBtn){
+                            aboutPart.textContent = sectionParts_text.default;
+                        }
+                        else{ //если нажимаем на другую кнопку
+                            aboutPart.textContent = sectionParts_text[numOfBtn];
+                            btns[numOfBtn].classList.add("selected-btn");
+                        }
+                        btns[pastNumOfBtn].classList.add("unSelected-btn");
+                        btns[pastNumOfBtn].classList.remove("selected-btn");
+                        pastNumOfBtn = numOfBtn;
+                    }
+                </script>
+            </div>
+            <div class="section-parts__content-down">
+                <p class="content-down__text">А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
+            </div>
+        </article>
+        <article id="section-authority" class="black-text-in-article">
+            <div class="section-name-container">
+                <h1 class="section-name-container__name">ВЛАСТЬ</h1>
+                <div class="section-name-container__right-part"></div>
+            </div>
+            <div class="section-authority__void"></div>
+            <div class="section-authority__content">
+                <div class="column-eq-1">
+                    <div class="section-authority__sub-section" id="mih">
+                        <h4 class="section__player-name">mihalera</h4>
+                        <img src="" id="mihalera" class="section__player-head">
+                        <p class="section__about-player">основатель</p>
+                    </div>
+                </div>
+                <div class="column-eq-2">
+                    <div class="section-authority__sub-section" id="akk">
+                        <h4 class="section__player-name">Akksi15</h4>
+                        <img src="" id="akksi" class="section__player-head">
+                        <p class="section__about-player">президент</p>
+                    </div>
+                    <div class="section-authority__sub-section" id="none">
+                        <h4 class="section__player-name">???</h4>
+                        <img src="" id="no-name" class="section__player-head">
+                        <p class="section__about-player">вице-президент</p>
+                    </div>
+                </div>
+                <div class="column-eq-3">
+                    <div class="section-authority__sub-section" id="pop">
+                        <h4 class="section__player-name">popipauuu</h4>
+                        <img src="" id="popo" class="section__player-head">
+                        <p class="section__about-player">глава гильдии</p>
+                    </div>
+                    <div class="section-authority__sub-section" id="yal">
+                        <h4 class="section__player-name">YaLesch</h4>
+                        <img src="" id="yalesch" class="section__player-head">
+                        <p class="section__about-player">глава города</p>
+                    </div>
+                    <div class="section-authority__sub-section" id="pod">
+                        <h4 class="section__player-name">Podvalish_Kristy</h4>
+                        <img src="" id="podvalish_kristy" class="section__player-head">
+                        <p class="section__about-player">глава клана</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="section-org" class="black-text-in-article">
+            <div class="section-name-container">
+                <h1 class="section-name-container__name">ОРГАНИЗАЦИИ</h1>
+                <div class="section-name-container__right-part"></div>
+            </div>
+            <div class="section-org__container">
+                <img src="" alt="" class="org-img">
+                <h3 class="org-name"></h3>
+                <p class="org-descript"></p>
+            </div>
+            <div class="section-org__container">
+                <img src="" alt="" class="org-img">
+                <h3 class="org-name"></h3>
+                <p class="org-descript"></p>
+            </div>
+        </article>
+        <article id="section-FAQ">
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">На каких координатах город?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Наш город находится на координатах в обычном мире: <a href="https://leafcity.ru/backend/survival#minecraft_overworld;flat;-7440,66,777;4" class="dedicated-link">-7440 66 777</a> <br>А координаты на крыше ада: -935 92
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Можно с бедрока вступить в клан?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Начиная с 3 июля 2024 года игроки с Bedrock Edition (телефонное издание) не принимаются, но бывают исключения
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">У вас в клане настоящий пугод?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    PWGoood_ не является тем известным лицом, о котором вы думаете
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">У клана есть своя клан база?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Клан “Шляпники“ имеет множество территорий, в том числе и ферм. На данный момент у нас имеется две официальные клановые базы
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Обязательно жить на базе клана?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Нет, вы можете жить где хотите
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Могу ли я состоять в двух кланах?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Нет, ваша позиция должна быть только в нашем клане
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Сколько нужно играть на сервере чтобы вступить в клан?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Нужно играть на этом сервере минимум 2 недели
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">У вас есть правила клана?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Да, они у нас есть и расписаны в отдельном канале. Вступая в клан, вы обязаны их изучить
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Если я не смогу сидеть в голосовом чате, то я смогу попасть к вам в клан?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Да, в таком случае вступить можно
+                </p>
+            </section>
+            <section class="section-FAQ__sub-section" onclick="">
+                <div class="sub-section__header">
+                    <h2 class="sub-section__question">Как узнать координаты всех ваших активностей?</h2>
+                    <img src="img/icon_arrowUp.svg" class="sub-section__open" id="">
+                </div>
+                <p class="section__text sub-section_answer">
+                    Все координаты клана будут указаны при принятии заявки
+                </p>
+            </section>
+        </article>
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div>
+                <p>No copyright, made by <a id="contactMeToBtn">ini_ga</a></p>
+                <p>donate to me (задонатить мне): 2202208082870099 (Арсений К).<br>Только в комментарий к донату пиши что-нибудь. Спасибо!</p>
+            </div>
+            <div id="contactMeBody">
+                <a href="https://discordapp.com/users/797153328714350703/" target="_blank"><button class="contactMe-btn" id="contactMe-btn1"><img src="img/discord-logo.png" class="button__discord-logo"><h2>Связаться со мной</h2></button></a>
+                <a href="" target="_blank"><button class="contactMe-btn" id="contactMe-btn2"><img src="img/github-logo.svg" class="button__discord-logo"><h2>Репозиторий сайта</h2></button></a>
+            </div>
+        </div>
+        <!-- <button id="rickrollBtn" onclick='window.open("https://youtu.be/dQw4w9WgXcQ?si=Q7huZwn_RL35bvtb", "хехехех, зарикроллил", "popup"); rickrollBtn_help__text.textContent ="Я предупреждал";' onmouseenter="followMouse('rickrollBtn', 'rickrollBtn_help')"></button>
+        <div id="rickrollBtn_help" class="img-help">
+            <p id="rickrollBtn_help__text" class="img-help__text">убер-секретная кнопка, не нажимать!</p>
+        </div> -->
+    </footer>
+</body>
+<script> //нужен чтобы блоки с задним фоном (картинки на заднем фоне) имели высоту, такую же, как у самих картинок
+    articlesNeedsMoreHeight = document.getElementsByClassName("needMoreHeight"); //блоки, которым нужна высота заднего фона (только для блоков с заним фоном)
+    articleHeight = document.getElementsByClassName("bg-img"); //задний фон
+    //как только загрузятся картинки для заднего фона - их высота ставится блокам с классом - "needMoreHeight"
+    document.addEventListener('DOMContentLoaded', //DOMContentLoaded работает с IE9 (2010 год)
+    function(){
+        for(i = 0;i < articleHeight.length;i++){
+            articleHeight[i].style.width = document.documentElement.clientWidth + "px";
+            articlesNeedsMoreHeight[i].style.height = articleHeight[i].offsetHeight + "px";
+            advantages.style.height = articleHeight[i].offsetHeight + 30 + "px"; //ставим на 20 px больше, чем section-hello высоту для преймуществ (#advantages)
+        }
+    },false);
+</script>
+</html>
