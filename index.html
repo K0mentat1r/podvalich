@@ -13,9 +13,9 @@
         <div class="header__links">
             <a href="#section-about" class="links__links-to-sect">О НАС</a>
             <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
-            <a href="#section-how-to-come-in" class="links__links-to-sect">ВЛАСТЬ</a>
+            <a href="#section-authority" class="links__links-to-sect">ВЛАСТЬ</a>
             <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
-            <a href="#section-how-to-come-in" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
+            <a href="#section-org" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
             <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
         </div>
         <div class="burger-menu">
@@ -26,9 +26,6 @@
         <div class="header__links">
             <a href="#section-about" class="links__links-to-sect">О НАС</a>
             <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
-            <a href="#section-how-to-come-in" class="links__links-to-sect">ВЛАСТЬ</a>
-            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
-            <a href="#section-how-to-come-in" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
             <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
         </div>
         <div class="burger-menu">
@@ -49,7 +46,7 @@
                 <div class="section-hello__content-container">
                     <img src="img/logo.png" alt="" class="section-hello__img"> 
                     <h1 class="section-hello__text white-text">сообщество "подвалич"</h1>
-                    <button class="section-hello__discord-btn"><p class="white-text">Ссылка на дс</p></button>
+                    <button class="section-hello__discord-btn"><img src="img/discord-logo.png" class="button__discord-logo"><p class="white-text">Подвалич</p></button>
                 </div>
             </div>
             <div id="advantages">
@@ -71,7 +68,7 @@
         </article>
         <article id="section-about">
             <h1 class="section-about__name orange-text">О НАС</h1>
-            <p class="section-text orange-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной. А вместе мы дружное сообщество, которое поддерживает друг друга, делится знаниями и опытом, и стремится к общим целям. Мы ценим каждого участника и верим, что вместе можем достичь большего!</p>
+            <p class="section-text orange-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной.</p>
         </article>
         <article id="section-city">
             <div class="section-name-container">
@@ -109,14 +106,17 @@
             </div>
             <div id="section-parts__content-up">
                 <div class="section-parts__left">
-                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(0)">
+                    <button class="section-parts__btn" onclick="replaceTextForSectPart(0)">
                         <h4 class="section-parts__btn-name">город</h4>
+                        <div class="section-parts__btn-void"></div>
                     </button>
-                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(1)">
+                    <button class="section-parts__btn" onclick="replaceTextForSectPart(1)">
                         <h4 class="section-parts__btn-name">клан</h4>
+                        <div class="section-parts__btn-void"></div>
                     </button>
-                    <button class="section-parts__btn-left section-parts__btn" onclick="replaceTextForSectPart(2)">
+                    <button class="section-parts__btn" onclick="replaceTextForSectPart(2)">
                         <h4 class="section-parts__btn-name">гильдия</h4>
+                        <div class="section-parts__btn-void"></div>
                     </button>
                 </div>
                 <div class="section-parts__right">
@@ -126,14 +126,18 @@
                 <!-- скрипт для кнопок -->
                 <script>
                     const sectionParts_text = { //весь текст, который будем менять по условию
-                        0:"город",
-                        1:"клан",
-                        2:"гильдия",
+                        0:"Живём вместе, помогаем друг другу, пиарим всех разом! Создадим город будущего! ",
+                        1:"Строим общие фермы, помогаем с ивентами, вместе тусуемся! Создадим великое братство! ",
+                        2:"Дадим работу, дадим работяг, поможем начать свой бизнес! Создадим торговую империю! ",
                         default:"нажмите на одну из кнопок, чтобы увидеть информацию"
                     };
                     const btns = document.getElementsByClassName("section-parts__btn");
+                    const rightVoid = document.getElementsByClassName("section-parts__btn-void"); //зеленый квадратик у правого края кнопки. Включен, только когда кнопка нажата
+                    
                     let pastNumOfBtn = null;
-
+                    let clicks = 0; //если кликаеи несколько раз на один элемент, то кнопка будет включаться и выключаться
+                    let rightVoidMustOff = false;
+                    
                     function replaceTextForSectPart(numOfBtn){
                         if (pastNumOfBtn == null){ //если скрипт запустился в первый раз ставим какое нибудь значение != номеру нажатой кнопки
                             if (numOfBtn < btns.length-1){
@@ -144,14 +148,35 @@
                             }
                         } //если нажимаем 2 раза подряд на одну кнопку, то мы ее типо выключаем и значение ставится стандартное
                         if (pastNumOfBtn == numOfBtn){
-                            aboutPart.textContent = sectionParts_text.default;
+                            clicks++;
+                            if (clicks == 3){
+                                clicks = 1;
+                                rightVoidMustOff = false;
+                            }
+                            if (clicks % 2 == 0){
+                                aboutPart.textContent = sectionParts_text.default;
+                                rightVoid[numOfBtn].style.display = "none";
+                                rightVoidMustOff = true;
+                            }
+                            else{
+                                aboutPart.textContent = sectionParts_text[numOfBtn];
+                                rightVoid[numOfBtn].style.display = "flex";
+                                rightVoidMustOff = false;
+                            }
                         }
                         else{ //если нажимаем на другую кнопку
                             aboutPart.textContent = sectionParts_text[numOfBtn];
                             btns[numOfBtn].classList.add("selected-btn");
+                            clicks=0;
                         }
                         btns[pastNumOfBtn].classList.add("unSelected-btn");
                         btns[pastNumOfBtn].classList.remove("selected-btn");
+                        if (!rightVoidMustOff){
+                            rightVoid[pastNumOfBtn].style.display = "none";
+                            rightVoid[numOfBtn].style.display = "flex";
+                            btns[numOfBtn].classList.remove("unSelected-btn");
+                            btns[numOfBtn].classList.add("selected-btn");
+                        }
                         pastNumOfBtn = numOfBtn;
                     }
                 </script>

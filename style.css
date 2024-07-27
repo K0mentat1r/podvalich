@@ -218,6 +218,19 @@ header{
     gap: calc(10px + 0.5vw);
     z-index: 1;
 }
+.section-hello__discord-btn{
+    background-color: #31343b;
+    border-radius: 5px;
+    border: 2px #434753 solid;
+    gap: 10%;
+    padding: 0 15%;
+    width: 80%;
+    
+}
+.section-hello__discord-btn p{
+    font-size: x-large;
+    margin: 15px auto;
+}
 #advantages{
     position: absolute;
     width: 100%;
@@ -307,6 +320,8 @@ header{
     grid-template-columns: 1fr 60%;
     justify-content: space-between;
     min-width: 60%;
+    max-width: 60%;
+    max-height: max-content;
     padding: 50px 30px;
     border-radius: 10px;
 }
@@ -317,16 +332,44 @@ header{
     padding: 0 calc(2vw + 10px);
     margin-top:calc(5vw + 10px);
 }
-#aboutPart{
-    margin-left: 100px;
-}
 .section-parts__left{
-    width:min-content;
+    width:fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
+.section-parts__btn{
+    width: 15vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.13);
+}
+.section-parts__btn h4{
+    font-size: large;
+}
+.selected-btn{
+    background-color: #F1FFE3;
+    border: 2px solid var(--standart-green);
+    width: 15.1vw;
+    display: grid;
+    grid-template-columns: 1fr 0.07fr;
+}
+.selected-btn h4{
+    color: var(--standart-green);
+    margin-left: 5px;
+}
+.section-parts__btn-void{
+    background-color: var(--standart-green);
+    width: 100%;
+    height: 100%;
+    padding: 2px 0;
+    border-radius: 0 5px 5px 0;
+    margin-left: 10px;
+    display: none;
+}
+
 
 #contactMeBody{
     display: flex;
@@ -346,21 +389,17 @@ header{
     background-color: #31343b;
     padding: 0 20px;
     height: max-content;
-    border-radius: 0;
+    border-radius: 20px;
 }
 button{
-    height: 60px;
-    width: 270px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color:#27282E;
     border: none;
     outline: none;
-    border-radius: 20px;
     transition: background-color 0.2s;
     cursor: pointer;
 }
+
 .button__discord-logo{
     width: 50px;
 }
