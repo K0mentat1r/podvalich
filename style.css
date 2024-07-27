@@ -14,6 +14,7 @@
 
     --light-green:#849350;
     --light-orange: #FFDF9E;
+    --light-grey: #c5c5ca;
 }
 html{
     scroll-behavior: smooth;
@@ -332,6 +333,9 @@ header{
     padding: 0 calc(2vw + 10px);
     margin-top:calc(5vw + 10px);
 }
+.section-parts__content-down p{
+    color: var(--light-orange);
+}
 .section-parts__left{
     width:fit-content;
     display: flex;
@@ -452,13 +456,16 @@ footer{
     height: max-content;
     padding: 10px 20px;
 }
+footer *{
+    color:#c5c5ca;
+}
 .footer-top{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 10px;
 }
-footer p>a{
-    padding-bottom:1px;
-    border-bottom: 1px solid #F4F2D7;
+footer p>span{
+    padding-bottom:0.5px;
+    border-bottom: 2px solid var(--light-grey);
 }
