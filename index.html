@@ -69,6 +69,10 @@
         <article id="section-about">
             <h1 class="section-about__name orange-text">О НАС</h1>
             <p class="section-text orange-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной.</p>
+            <div id="section-about__bg-img-container"><img src="img/logo.png" alt="" class="section-about__bg-img" 
+                onload="let elWidth = document.getElementById('section-about').offsetHeight - 40;
+                this.style.width = elWidth + 'px'; 
+                this.style.height = elWidth / 1.03 + 'px';"></div> <!--при загрузе картинки ставим ей высоту и ширину, чтобы не выходила за пределы #section-about-->
         </article>
         <article id="section-city">
             <div class="section-name-container">
@@ -201,12 +205,12 @@
                     </div>
                 </div>
                 <div class="column-eq-2">
-                    <div class="section-authority__sub-section" id="akk">
+                    <div class="section-authority__sub-section column-eq-2__first-child" id="akk">
                         <h4 class="section__player-name">Akksi15</h4>
                         <img src="" id="akksi" class="section__player-head">
                         <p class="section__about-player">президент</p>
                     </div>
-                    <div class="section-authority__sub-section" id="none">
+                    <div class="section-authority__sub-section column-eq-2__last-child" id="none">
                         <h4 class="section__player-name">???</h4>
                         <img src="" id="no-name" class="section__player-head">
                         <p class="section__about-player">вице-президент</p>
@@ -231,20 +235,22 @@
                 </div>
             </div>
         </article>
-        <article id="section-org" class="black-text-in-article">
+        <article id="section-org">
             <div class="section-name-container">
                 <h1 class="section-name-container__name">ОРГАНИЗАЦИИ</h1>
                 <div class="section-name-container__right-part"></div>
             </div>
-            <div class="section-org__container">
-                <img src="" alt="" class="org-img">
-                <h3 class="org-name"></h3>
-                <p class="org-descript"></p>
-            </div>
-            <div class="section-org__container">
-                <img src="" alt="" class="org-img">
-                <h3 class="org-name"></h3>
-                <p class="org-descript"></p>
+            <div class="section-org__content">
+                <div class="section-org__container section-org__content-fist-child">
+                    <img src="img/rhodes-island-logo.png" alt="" class="org-img">
+                    <h3 class="org-name">Rhodes Island</h3>
+                    <p class="org-descript">Описание организации</p>
+                </div>
+                <div class="section-org__container section-org__content-last-child">
+                    <img src="" alt="" class="org-img">
+                    <h3 class="org-name">Название организации</h3>
+                    <p class="org-descript">Описание организации</p>
+                </div>
             </div>
         </article>
         <article id="section-FAQ">
@@ -367,7 +373,7 @@
             articleHeight[i].style.width = document.documentElement.clientWidth + "px";
             articlesNeedsMoreHeight[i].style.height = articleHeight[i].offsetHeight + "px";
         }
-        advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 20 px больше, чем section-hello высоту для преймуществ (#advantages)
+        advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 30 px больше, чем section-hello высоту для преймуществ (#advantages)
     },false);
 </script>
 </html>

@@ -18,6 +18,7 @@
 }
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body{
     margin:0;
@@ -198,7 +199,8 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
+    gap: 10vh;
+    margin-bottom: 5vh;
 }
 .section-hello__img{
     max-width: 150px;
@@ -279,9 +281,25 @@ header{
 #section-about h1{
     margin-bottom: 0;
     font-size: 27px;
+    z-index: 1;
 }
 #section-about p{
     font-size: 17px;
+    z-index: 1;
+}
+#section-about__bg-img-container{
+    display: flex;
+    width: 83%;
+    justify-content: end;
+    height: 100px;
+    position: absolute;
+}
+.section-about__bg-img{
+    height: 100%;
+    z-index: 0;
+    opacity: 50%;
+    transform: rotate(-60deg);
+    margin-top: 10px;
 }
 #section-city{
     margin: auto;
@@ -372,6 +390,78 @@ header{
     border-radius: 0 5px 5px 0;
     margin-left: 10px;
     display: none;
+}
+#section-authority{
+    margin: auto;
+}
+.section-authority__content{
+    display: grid;
+    grid-template-columns: 96vw;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    row-gap: calc(10vh + 20px);
+}
+.column-eq-1{
+    margin: auto;
+}
+.column-eq-1 *{
+    align-items: center;
+    text-align: center;
+}
+.column-eq-2{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10vw;
+}
+.column-eq-2__first-child {
+    grid-column: 2;
+    justify-self: end;
+    text-align: center;
+    margin-left: 10px;
+}
+.column-eq-2__last-child {
+    grid-column: 3;
+    justify-self: start;
+    text-align: center;
+    margin-right: 10px;
+}
+.column-eq-3{
+    display: grid;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 10vw;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3,1fr);
+}
+.column-eq-3 *{
+    text-align: center;
+}
+.section-org__content{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4,1fr);
+    flex-direction: row;
+}
+.section-org__content-fist-child{
+    grid-column: 2;
+    text-align: center;
+    margin-left: 10px;
+}
+.section-org__content-last-child {
+    grid-column: 3;
+    text-align: center;
+    margin-right: 10px;
+}
+.org-img{
+    border-radius: 360px;
+}
+.org-descript{
+    color: #59652E;
+}
+.org-name{
+    font-size: x-large;
 }
 
 
