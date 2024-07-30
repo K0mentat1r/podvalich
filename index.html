@@ -26,6 +26,9 @@
         <div class="header__links">
             <a href="#section-about" class="links__links-to-sect">О НАС</a>
             <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
+            <a href="#section-authority" class="links__links-to-sect">ВЛАСТЬ</a>
+            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
+            <a href="#section-org" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
             <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
         </div>
         <div class="burger-menu">
@@ -39,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div id="blocks">
+    <main id="blocks">
         <article id="section-hello" class="needMoreHeight">
             <img src="img/section-hello_background.png" class="bg-img">
             <div class="grid-left">
@@ -77,7 +80,10 @@
         <article id="section-city">
             <div class="section-name-container">
                 <h1 class="section-name-container__name">НАШ ГОРОД</h1>
-                <div class="section-name-container__right-part"></div>
+                <div class="section-name-container__void"></div>
+                <div class="section-name-container__right-part">
+                    <img class="section-name-container__img" src="img/icons/carrot-icon.png">
+                </div>
             </div>
             <div class="section-content">
                 <div class="section-city__img-container section-city__left">
@@ -105,8 +111,11 @@
         <article id="section-parts" class="needMoreHeight" >
             <img src="img/section-parts_background.png" class="bg-img">
             <div class="section-name-container">
-                <h1 class="section-name-container__name">НАШ ГОРОД</h1>
-                <div class="section-name-container__right-part"></div>
+                <h1 class="section-name-container__name">ПОДРАЗДЕЛЕНИЯ</h1>
+                <div class="section-name-container__void"></div>
+                <div class="section-name-container__right-part">
+                    <img class="section-name-container__img" src="img/icons/carrot-icon.png">
+                </div>
             </div>
             <div id="section-parts__content-up">
                 <div class="section-parts__left">
@@ -193,7 +202,10 @@
         <article id="section-authority" class="black-text-in-article">
             <div class="section-name-container">
                 <h1 class="section-name-container__name">ВЛАСТЬ</h1>
-                <div class="section-name-container__right-part"></div>
+                <div class="section-name-container__void"></div>
+                <div class="section-name-container__right-part">
+                    <img class="section-name-container__img" src="img/icons/carrot-icon.png">
+                </div>
             </div>
             <div class="section-authority__void"></div>
             <div class="section-authority__content">
@@ -238,7 +250,10 @@
         <article id="section-org">
             <div class="section-name-container">
                 <h1 class="section-name-container__name">ОРГАНИЗАЦИИ</h1>
-                <div class="section-name-container__right-part"></div>
+                <div class="section-name-container__void"></div>
+                <div class="section-name-container__right-part">
+                    <img class="section-name-container__img" src="img/icons/carrot-icon.png">
+                </div>
             </div>
             <div class="section-org__content">
                 <div class="section-org__container section-org__content-fist-child">
@@ -254,6 +269,13 @@
             </div>
         </article>
         <article id="section-FAQ">
+            <div class="section-name-container">
+                <h1 class="section-name-container__name">FAQ</h1>
+                <div class="section-name-container__void"></div>
+                <div class="section-name-container__right-part">
+                    <img class="section-name-container__img" src="img/icons/carrot-icon.png">
+                </div>
+            </div>
             <section class="section-FAQ__sub-section" onclick="">
                 <div class="sub-section__header">
                     <h2 class="sub-section__question">На каких координатах город?</h2>
@@ -345,7 +367,7 @@
                 </p>
             </section>
         </article>
-    </div>
+    </main>
     <footer>
         <div class="footer-top">
             <div>
@@ -354,7 +376,7 @@
             </div>
             <div id="contactMeBody">
                 <a href="https://discordapp.com/users/797153328714350703/" target="_blank"><button class="contactMe-btn" id="contactMe-btn1"><img src="img/discord-logo.png" class="button__discord-logo"><h2>Связаться со мной</h2></button></a>
-                <a href="" target="_blank"><button class="contactMe-btn" id="contactMe-btn2"><img src="img/github-logo.svg" class="button__discord-logo"><h2>Репозиторий сайта</h2></button></a>
+                <a href="https://github.com/K0mentat1r/podvalich" target="_blank"><button class="contactMe-btn" id="contactMe-btn2"><img src="img/github-logo.svg" class="button__discord-logo"><h2>Репозиторий сайта</h2></button></a>
             </div>
         </div>
         <!-- <button id="rickrollBtn" onclick='window.open("https://youtu.be/dQw4w9WgXcQ?si=Q7huZwn_RL35bvtb", "хехехех, зарикроллил", "popup"); rickrollBtn_help__text.textContent ="Я предупреждал";' onmouseenter="followMouse('rickrollBtn', 'rickrollBtn_help')"></button>
@@ -376,4 +398,12 @@
         advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 30 px больше, чем section-hello высоту для преймуществ (#advantages)
     },false);
 </script>
+<script>
+    function loadScripts(){
+        document.write ('<script src="js/other-script.js" ></sc' + 'ript>');
+    }
+</script>
+<script src="js/other-script.js" ></script>
+<script src="js/objectTitle.js"></script>
+<script src="js/sections.js"></script>
 </html>
