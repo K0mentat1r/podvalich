@@ -57,13 +57,13 @@ button{
     color:black;
 }
 .bg-img{
+    object-fit: cover;
     position: absolute;
-    height: auto;
-    max-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
     z-index: -1;
     filter: brightness(60%);
-    object-fit: cover;
-    max-height: calc(100vh - 10%);
+    max-height: 100vh;
 }
 .white-text{
     color:white;
@@ -381,7 +381,7 @@ header{
 }
 .img-decript__text{
     margin: 5px 0;
-    color: var(--standart-grey)
+    color: var(--standart-grey);
 }
 #section-parts .section-name-container{
     width: 60%;
@@ -405,6 +405,8 @@ header{
     justify-content: space-between;
     min-width: 60%;
     max-width: 60%;
+    min-height: 25%;
+    max-height: 25%;
     max-height: max-content;
     padding: 50px 30px;
     border-radius: 10px;
@@ -533,6 +535,10 @@ header{
     grid-template-rows: 1fr;
     grid-template-columns: repeat(4,1fr);
     flex-direction: row;
+}
+.section-org__content img{
+    max-width: 168px;
+    max-height: 168px;
 }
 .section-org__content-fist-child{
     grid-column: 2;
@@ -795,5 +801,195 @@ footer p>span{
         left: 0;
         position: relative;
         transform: rotate(0);
+    }
+}
+@media (max-width: 1500px){
+    .section-name-container{
+        width: 70vw;
+    }
+    #section-city .section-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .section-city__right{
+        flex-direction: row;
+    }
+    .section-city__right img{
+        width: calc(40vw - 20px);
+    }
+    .column-eq-2{
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .column-eq-3{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 1500px ) and (min-width:931px){
+    .section-city__right{
+        flex-direction: row;
+    }
+    .section-city__right img{
+        width: calc(40vw - 20px);
+    }
+}
+@media (max-width: 1235px){
+
+    .section-hello__text{
+        margin-right: 10px;
+        font-size: 25px;
+    }
+    .section-hello__img{
+        width: 400px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .section-about__text{
+        font-size: 25px;
+    }
+    .footer-top{
+        margin-bottom: 10px;
+    }
+    #contactMeBody{
+        flex-direction: column;
+    }
+    #contactMe-btn1{
+        border-radius: 18px 18px 0 0;
+    }
+    #contactMe-btn1 h2{
+        padding-right: 8px;
+    }
+    #contactMe-btn2{
+        border-radius: 0 0 18px 18px;
+    }
+}
+@media (max-width:930px){
+    .section-city__right{
+        flex-direction: column;
+    }
+    #section-city{
+        align-items: center;
+    }
+    #section-city .section-content{
+        width: calc(100vw - 26%);
+    }
+    #section-city .section-content img{
+        width: 100%;
+    }
+}
+@media (max-width: 849px){
+    #section-hello, #section-about{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-hello__text, .section-about__text{
+        text-align: center;
+        width: 100%;
+        margin:0;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    .section-about__name{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 849px) and (min-width: 717px){
+    #main-header .burger-menu{
+        width: 70px;
+    }
+
+}
+
+@media (max-width: 717px){
+    header{
+        padding: 30px 10px;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 717px) and (min-width: 561px){
+    #main-header .burger-menu{
+        width: 39px;
+        margin-right: 10px;
+    }
+    header{
+        padding: 30px 10px;
+    }
+}
+@media (max-width: 561px){
+    h1{
+        text-align: center;
+    }
+    .header__links{
+        gap: 10px;
+    }
+    .header__links a{
+        font-size: 17px;
+    }
+    #main-header .burger-menu, #second-header .burger-menu{
+        width: 28px;
+        height: 16px;
+        margin: 0 10px;
+    }
+    header{
+        padding: 20px 5px;
+    }
+    .footer-top{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 457px){
+    .header__links{
+        gap: 7px;
+    }
+    img{
+       
+    }
+    .button__discord-logo {
+        width: 40px;
+    }
+    h1{
+        text-align: center;
+    }
+    .sub-section__open{
+        width: 25px;
+        height: 13px;
+    }
+}
+@media (max-width:400px){
+    p, figcaption, a{
+        font-size: 15px !important;
+    }
+    h2,h3{
+        font-size: 20px !important;
+    }
+    h1{
+        font-size: 25px !important;
+    }
+    .section__player-name{
+        font-size: 25px;
+    }
+    .section__player-head{
+        width: 150px;
+    }
+    #discord-invite {
+        width: auto;
+        padding: 5px 20px;
+        gap: 10px;
+        height: auto;
+    }
+    .button__discord-logo {
+        width: 30px;
     }
 }

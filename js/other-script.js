@@ -81,7 +81,7 @@ function MenuController(num){
 }
 
 function isHeader2Visible() {
-    let paddingTop = 100; //прибавляется к результату (высчитывается где начало <main>)
+    let paddingTop = document.getElementById("section-hello").offsetHeight - 50; //прибавляется к результату (высчитывается где начало <main>)
     // проверка, где второй хидер
     return (
         userWinPos <= elemMainTop + paddingTop
