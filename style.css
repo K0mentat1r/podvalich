@@ -15,6 +15,8 @@
     --light-green:#849350;
     --light-orange: #FFDF9E;
     --light-grey: #c5c5ca;
+
+    --header-width: 0;
 }
 html{
     scroll-behavior: smooth;
@@ -104,7 +106,7 @@ header{
     background-color: rgba(190, 132, 55, .30);
     backdrop-filter: blur(5px);
     padding: 20px 0;
-    width: 100%;
+    width: var(--header-width);
     z-index: 10;
 }
 .header__links{
@@ -337,7 +339,7 @@ header{
     display: flex;
     width: 83%;
     justify-content: end;
-    height: 100px;
+    height: max-content;
     position: absolute;
 }
 .section-about__bg-img{
@@ -869,6 +871,15 @@ footer p>span{
     #contactMe-btn2{
         border-radius: 0 0 18px 18px;
     }
+    .section-org__content{
+        grid-template-columns: 1fr 1fr;
+    }
+    .section-org__content-fist-child{
+        grid-column: 1;
+    }
+    .section-org__content-last-child{
+        grid-column: 2;
+    }
 }
 @media (max-width:930px){
     .section-city__right{
@@ -882,6 +893,26 @@ footer p>span{
     }
     #section-city .section-content img{
         width: 100%;
+    }
+    #section-parts__content-up{
+        display: flex;
+        flex-direction: column;
+    }
+    .section-parts__left{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .section-parts__btn{
+        width: 30%;
+    }
+    .selected-btn{
+        width:30.1%;
+    }
+    #section-parts__content-up{
+        min-height: fit-content;
+        padding-bottom: 0;
     }
 }
 @media (max-width: 849px){
@@ -903,12 +934,11 @@ footer p>span{
         justify-content: center;
     }
 }
-@media (max-width: 849px) and (min-width: 717px){
+/* @media (max-width: 849px) and (min-width: 717px){
     #main-header .burger-menu{
         width: 70px;
     }
-
-}
+} */
 
 @media (max-width: 717px){
     header{
@@ -947,7 +977,37 @@ footer p>span{
         display: flex;
         flex-direction: column;
     }
-
+    #section-parts__content-up{
+        min-width: 80%;
+        max-width: 80%;
+    }
+    .section-name-container{
+        flex-direction: column-reverse;
+        width: 50%;
+        align-items: center;
+    }
+    .section-name-container h1{
+        margin-top: 10px;
+    }
+    .section-name-container__right-part{
+        margin-bottom: 5px;
+        align-self: center;
+    }
+    .section-name-container__right-part::after{
+        content: none;
+    }
+    .section-org__content{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section-org__content ~*{
+        margin-top: 10px;
+    }
+    .section-org__content img{
+        width: 100px;
+    }
 }
 @media (max-width: 457px){
     .header__links{
@@ -965,6 +1025,23 @@ footer p>span{
     .sub-section__open{
         width: 25px;
         height: 13px;
+    }
+    .grid-left{
+        margin:0;
+        padding: 0;
+        margin-left:1vw
+    }
+    #advantages__container{
+        width: 80%;
+    }
+    .section-parts__btn{
+        width: 40%;
+    }
+    .selected-btn{
+        width: 40.1%;
+    }
+    .section-parts__btn h4{
+        margin: 10px 0;
     }
 }
 @media (max-width:400px){
@@ -991,5 +1068,8 @@ footer p>span{
     }
     .button__discord-logo {
         width: 30px;
+    }
+    .section-authority__sub-section h4{
+        font-size: larger;
     }
 }

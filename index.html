@@ -35,6 +35,18 @@
             <div class="in-burger"></div>
         </div>
     </header>
+    <script>
+        let userScreenWidth = document.documentElement.clientWidth;
+        let headers= document.querySelectorAll('header')
+        let mrgnRight = 20;
+        if (userScreenWidth < 717){
+            mrgnRight = 10;
+        }
+        for(i=0;i<headers.length;i++){
+            headers[i].style.width= userScreenWidth - mrgnRight + "px";
+            headers[i].style.width-="2vw";
+        }
+    </script>
     <div id="menu" class="popup">
         <div id="menuContainer" class="popup__container">
             <div id="menuBody" class="popup__body">
@@ -73,7 +85,11 @@
             <h1 class="section-about__name orange-text">О НАС</h1>
             <p class="section-text orange-text">Наше сообщество, это гильдия, клан и город вместе взятые на сервере LEAFCITY. Мы за либеральные ценности, за индивидуальность, не осуждаем ЛГБТ, фурри и т.п. Мы за АРы, но не против АБов. Мы за гостеприимство. Мы не против двойного гражданства. Побеждаем экономикой, а не войной.</p>
             <div id="section-about__bg-img-container"><img src="img/logo.png" alt="" class="section-about__bg-img" 
-                onload="let elWidth = document.getElementById('section-about').offsetHeight - 40;
+                onload="let marginBtm = 40;
+                if (document.documentElement.clientWidth < 849){
+                    marginBtm = 100;
+                }
+                let elWidth = document.getElementById('section-about').offsetHeight - marginBtm;
                 this.style.width = elWidth + 'px'; 
                 this.style.height = elWidth / 1.03 + 'px';"></div> <!--при загрузе картинки ставим ей высоту и ширину, чтобы не выходила за пределы #section-about-->
         </article>
@@ -386,16 +402,17 @@
     </footer>
 </body>
 <script> //нужен чтобы блоки с задним фоном (картинки на заднем фоне) имели высоту, такую же, как у самих картинок
-    articlesNeedsMoreHeight = document.getElementsByClassName("needMoreHeight"); //блоки, которым нужна высота заднего фона (только для блоков с заним фоном)
-    articleHeight = document.getElementsByClassName("bg-img"); //задний фон
-    userScreenWidth = document.documentElement.clientWidth;
+    let articlesNeedsMoreHeight = document.getElementsByClassName("needMoreHeight"); //блоки, которым нужна высота заднего фона (только для блоков с заним фоном)
+    let articleHeight = document.getElementsByClassName("bg-img"); //задний фон
     //как только загрузятся картинки для заднего фона - их высота ставится блокам с классом - "needMoreHeight"
     document.addEventListener('DOMContentLoaded', //DOMContentLoaded работает с IE9 (2010 год)
     function(){
         for(i = 0;i < articleHeight.length;i++){
             articleHeight[i].style.width = userScreenWidth + "px";
             articleHeight[i].style.height = window.innerHeight + "px";
-            articleHeight[i].style.right = articleHeight[i].offsetWidth - userScreenWidth + "px";
+            if (articleHeight[i].offsetWidth - userScreenWidth != 0){
+                articleHeight[i].style.right = articleHeight[i].offsetWidth - userScreenWidth + "px";
+            }
             articlesNeedsMoreHeight[i].style.height = articleHeight[i].offsetHeight + "px";
         }
         advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 30 px больше, чем section-hello высоту для преймуществ (#advantages)
