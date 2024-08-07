@@ -1,0 +1,28 @@
+
+img{
+    max-width: 70%;
+    min-width: 70%;
+    height: auto;
+    border-radius: 20px;
+}
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+#screenshotsBody{
+    margin:0;
+    padding: 0;
+    border-radius: 32px;
+    border: 1vw var(--standart-grey) solid;
+}
+.img-btn{
+    position: absolute;
+    display: flex;
+    border-radius: 360px;
+    background-color:#444138a6;
+    width: 30px;
+    height: 30px;
+}

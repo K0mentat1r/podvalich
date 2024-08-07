@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css"> <!--основные стили-->
+    <link rel="stylesheet" href="style.css"> <!--стили этой страницы-->
     <title></title>
 </head>
 <body>
@@ -50,13 +51,14 @@
     <div id="menu" class="popup">
         <div id="menuContainer" class="popup__container">
             <div id="menuBody" class="popup__body">
-                
+                <p class="menu-link">Главная</p>
+                <p class="menu-link">Галерея</p>
             </div>
         </div>
     </div>
     <main id="blocks">
         <article id="section-hello" class="needMoreHeight">
-            <img src="img/section-hello_background.png" class="bg-img">
+            <img src="img/section-hello_background.png" class="bg-img first-bg-img">
             <div class="grid-left">
                 <div class="section-hello__content-container">
                     <img src="img/logo.png" alt="" class="section-hello__img"> 
@@ -88,6 +90,9 @@
                 onload="let marginBtm = 40;
                 if (document.documentElement.clientWidth < 849){
                     marginBtm = 100;
+                }
+                if (document.documentElement.clientWidth < 335){
+                    marginBtm= 150;
                 }
                 let elWidth = document.getElementById('section-about').offsetHeight - marginBtm;
                 this.style.width = elWidth + 'px'; 
@@ -136,20 +141,20 @@
             <div id="section-parts__content-up">
                 <div class="section-parts__left">
                     <button class="section-parts__btn" onclick="replaceTextForSectPart(0)">
-                        <h4 class="section-parts__btn-name">город</h4>
+                        <h4 class="section-parts__btn-name">ГОРОД</h4>
                         <div class="section-parts__btn-void"></div>
                     </button>
                     <button class="section-parts__btn" onclick="replaceTextForSectPart(1)">
-                        <h4 class="section-parts__btn-name">клан</h4>
+                        <h4 class="section-parts__btn-name">КЛАН</h4>
                         <div class="section-parts__btn-void"></div>
                     </button>
                     <button class="section-parts__btn" onclick="replaceTextForSectPart(2)">
-                        <h4 class="section-parts__btn-name">гильдия</h4>
+                        <h4 class="section-parts__btn-name">ГИЛЬДИЯ</h4>
                         <div class="section-parts__btn-void"></div>
                     </button>
                 </div>
                 <div class="section-parts__right">
-                    <p id="aboutPart">нажмите на одну из кнопок, чтобы увидеть информацию</p>
+                    <p id="aboutPart">Нажмите на одну из кнопок, чтобы увидеть информацию</p>
                     <!-- текст для города, клана и гильдии -->
                 </div>
                 <!-- скрипт для кнопок -->
@@ -158,7 +163,7 @@
                         0:"Живём вместе, помогаем друг другу, пиарим всех разом! Давайте создадим город будущего, где каждый житель будет чувствовать себя нужным и важным. Представьте себе место, где инновации и традиции идут рука об руку, где каждый день приносит новые возможности для развития и самореализации. Присоединяйтесь к нам, и давайте вместе строить город будущего, где каждый будет чувствовать себя частью чего-то великого и важного!",
                         1:"Строим общие фермы, помогаем с ивентами, вместе тусуемся! Создадим великое братство! В клане мы объединяемся для достижения общих целей и поддержки друг друга в любых начинаниях. Наше братство основано на доверии, взаимовыручке и общих интересах. Присоединяйтесь к нашему клану и станьте частью великого братства, где каждый день приносит новые возможности и радость от совместных достижений. Давайте вместе строить наше будущее, поддерживать друг друга и создавать незабываемые моменты!",
                         2:"Дадим работу, дадим работяг, поможем начать свой бизнес! Создадим торговую империю! Мы создаём условия, в которых каждый может реализовать свои амбиции и достичь значительных высот в мире торговли и бизнеса. Наша гильдия объединяет самых разных людей, стремящихся к успеху и процветанию. Мы создаём условия, в которых каждый может реализовать свои амбиции и достичь значительных высот в мире торговли и бизнеса. ",
-                        default:"нажмите на одну из кнопок, чтобы увидеть информацию"
+                        default:"Нажмите на одну из кнопок, чтобы увидеть информацию"
                     };
                     const btns = document.getElementsByClassName("section-parts__btn");
                     const rightVoid = document.getElementsByClassName("section-parts__btn-void"); //зеленый квадратик у правого края кнопки. Включен, только когда кнопка нажата
@@ -275,12 +280,12 @@
                 <div class="section-org__container section-org__content-fist-child">
                     <img src="img/rhodes-island-logo.png" alt="" class="org-img">
                     <h3 class="org-name">Rhodes Island</h3>
-                    <p class="org-descript">Описание организации</p>
+                    <!-- <p class="org-descript">Описание организации</p> -->
                 </div>
                 <div class="section-org__container section-org__content-last-child">
                     <img src="img/restoun.jpg" alt="" class="org-img">
                     <h3 class="org-name">Редстоун</h3>
-                    <p class="org-descript">Описание организации</p>
+                    <!-- <p class="org-descript">Описание организации</p> -->
                 </div>
             </div>
         </article>
@@ -417,6 +422,9 @@
         }
         advantages.style.height = articleHeight[0].offsetHeight + 30 + "px"; //ставим на 30 px больше, чем section-hello высоту для преймуществ (#advantages)
     },false);
+</script>
+<script>
+
 </script>
 <script src="js/other-script.js" ></script>
 <script src="js/objectTitle.js"></script>

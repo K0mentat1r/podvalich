@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="screenshots.css">
+    <title></title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="header__links">
+            <a href="#section-about" class="links__links-to-sect">О НАС</a>
+            <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
+            <a href="#section-authority" class="links__links-to-sect">ВЛАСТЬ</a>
+            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
+            <a href="#section-org" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
+            <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
+        </div>
+        <div class="burger-menu">
+            <div class="in-burger"></div>
+        </div>
+    </header>
+    <script>
+        let userScreenWidth = document.documentElement.clientWidth;
+        let headers= document.querySelectorAll('header')
+        let mrgnRight = 20;
+        if (userScreenWidth < 717){
+            mrgnRight = 10;
+        }
+        for(i=0;i<headers.length;i++){
+            headers[i].style.width= userScreenWidth - mrgnRight + "px";
+            headers[i].style.width-="2vw";
+        }
+    </script>
+    <main id="content">
+        <div id="screenshotsBody">
+            <img src="screenshots/screensh-ini_ga-1.png" class="standart-screenshot">
+            <div class="img-btn" id="leftBtn"></div>
+            <div class="img-btn" id="rightBtn"></div>
+        </div>
+    </main>
+</body>
+<script>
+    let image = document.querySelector("img");
+    let imageRect = image.getBoundingClientRect();
+    let btnMargin = 10;
+    
+    //нужно дописать чтобы кнопки подстраивались ещё по ширине, не только высоте
+    leftBtn.style.top = imageRect.top + image.offsetHeight/2 + "px";
+    rightBtn.style.top = imageRect.top + image.offsetHeight/2 + "px";
+</script>
+</html>
