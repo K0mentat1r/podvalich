@@ -1024,6 +1024,9 @@ footer p>span{
     .header__links{
         gap: 7px;
     }
+    .header__links a{
+        font-size: 15px;
+    }
     .button__discord-logo {
         width: 40px;
     }
