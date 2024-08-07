@@ -106,7 +106,7 @@ header{
     background-color: rgba(190, 132, 55, .30);
     backdrop-filter: blur(5px);
     padding: 20px 0;
-    width: var(--header-width);
+    /* ширина ставится через скрипты */
     z-index: 10;
 }
 .header__links{
@@ -945,6 +945,10 @@ footer p>span{
         padding: 30px 10px;
         justify-content: space-around;
     }
+    #section-parts__content-up{
+        min-width: 80%;
+        max-width: 80%;
+    }
 }
 @media (max-width: 717px) and (min-width: 561px){
     #main-header .burger-menu{
@@ -966,7 +970,7 @@ footer p>span{
         font-size: 17px;
     }
     #main-header .burger-menu, #second-header .burger-menu{
-        width: 28px;
+        width: 40px;
         height: 16px;
         margin: 0 10px;
     }
@@ -976,10 +980,6 @@ footer p>span{
     .footer-top{
         display: flex;
         flex-direction: column;
-    }
-    #section-parts__content-up{
-        min-width: 80%;
-        max-width: 80%;
     }
     .section-name-container{
         flex-direction: column-reverse;
@@ -1008,13 +1008,21 @@ footer p>span{
     .section-org__content img{
         width: 100px;
     }
+    #section-FAQ{
+        padding: 30px 0;
+    }
+    .section-FAQ__sub-section:last-child{
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 561px) and (min-width: 401px){
+    #aboutPart, .content-down__text{
+        font-size: large;
+    }
 }
 @media (max-width: 457px){
     .header__links{
         gap: 7px;
-    }
-    img{
-       
     }
     .button__discord-logo {
         width: 40px;
@@ -1045,14 +1053,14 @@ footer p>span{
     }
 }
 @media (max-width:400px){
-    p, figcaption, a{
-        font-size: 15px !important;
+    p, figcaption, a, #section-about p, .section-hello__discord-btn p{
+        font-size: 15px;
     }
     h2,h3{
-        font-size: 20px !important;
+        font-size: 20px;
     }
     h1{
-        font-size: 25px !important;
+        font-size: 25px;
     }
     .section__player-name{
         font-size: 25px;
@@ -1071,5 +1079,33 @@ footer p>span{
     }
     .section-authority__sub-section h4{
         font-size: larger;
+    }
+    .section-hello__discord-btn{
+        width: 50%;
+        padding: 0 7px;
+        margin: auto;
+    }
+    .img-decript{
+        margin-top: -32px;
+    }
+    .advantages__body img{
+        width: 30px;
+    }
+    .advantages__body p{
+        font-size: small;
+    }
+    #advantages__container{
+        width: 90%;
+    }
+    #section-FAQ{
+        padding: 30px 5px;
+    }
+}
+@media (max-width:390px){
+    .links__links-to-sect:nth-child(4) {
+        display: none;
+    }
+    .grid-left{
+        width: calc(100% - 10px);
     }
 }
