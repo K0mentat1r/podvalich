@@ -36,20 +36,105 @@
         }
     </script>
     <main id="content">
-        <div id="screenshotsBody">
-            <img src="screenshots/screensh-ini_ga-1.png" class="standart-screenshot">
-            <div class="img-btn" id="leftBtn"></div>
-            <div class="img-btn" id="rightBtn"></div>
+        <div id="closingOthers">
+
+        </div>
+        <h1 class="site-name">Галерея нашего сообщества</h1>
+        <div class="screenshots-container">
+            <div id="screenshotsBody">
+                <div id="screenshots">
+                    <div class="screensh-container">
+                        <img src="screenshots/screensh-ini_ga-1.png" class="screenshot">
+                    </div>
+                    <div class="screensh-container">
+                        <img src="screenshots/screensh-ini_ga-1.png" class="screenshot">
+                    </div>
+                    <div class="screensh-container">
+                        <img src="screenshots/screensh-ini_ga-1.png" class="screenshot">
+                    </div>
+                </div>
+                <div class="img-btn" id="leftBtn">
+                    <img src="screenshots/icons/arrow.svg" class="btn-arrow btn-arrow-left">
+                </div>
+                <div class="img-btn" id="rightBtn">
+                    <img src="screenshots/icons/arrow.svg" class="btn-arrow btn-arrow-right">
+                </div>
+                <div id="screenshAuthorContainer">
+                    <img id="">
+                    <p id="screenshAuthorName"></p>
+                </div>
+            </div>
         </div>
     </main>
 </body>
+<!-- ставим кнопки для перелистывания в нужное место -->
+ <!-- нужно сделать, чтобы отрабатывал только после загрузки страницы -->
 <script>
     let image = document.querySelector("img");
     let imageRect = image.getBoundingClientRect();
-    let btnMargin = 10;
+    let imageRectTop = imageRect.top + window.pageYOffset; //нужно, чтобы кнопки вставали ровно, без учета прокрутки
+    let btnMargin = 20;
     
-    //нужно дописать чтобы кнопки подстраивались ещё по ширине, не только высоте
-    leftBtn.style.top = imageRect.top + image.offsetHeight/2 + "px";
-    rightBtn.style.top = imageRect.top + image.offsetHeight/2 + "px";
+    leftBtn.style.left = imageRect.x + leftBtn.offsetWidth/2+ btnMargin+"px";
+    rightBtn.style.left = imageRect.right - rightBtn.offsetWidth - btnMargin +"px";
+    //криво, нужно переписать (две строчки сверху). UDP: криво, становится правая кнопка, если страница загружена не с 0 прокрутки по y
+    leftBtn.style.top = imageRectTop + image.offsetHeight/2 + "px";
+    rightBtn.style.top = imageRectTop + image.offsetHeight/2 + "px";
+</script>
+<!-- затемняем все, кроме screenshotsBody, если нажали на кнопку, увелись курсором с screenshotsBody - делаем как было -->
+<script>
+    closingOthers.style.height = document.documentElement.offsetHeight +"px";
+    closingOthers.style.display = "none";
+
+    let btns = document.getElementsByClassName("img-btn");
+    let numOfBtn = 0;
+    leftBtn.addEventListener("click",() => onFocus(0));
+    rightBtn.addEventListener("click",() => onFocus(1));
+
+    function onFocus(num){
+        closingOthers.style.display = "block";
+        setTimeout(() => closingOthers.style.backgroundColor = "rgba(0,0,0,.50)", 0.01 * 1000); //нужна задержка, иначе появистя резко
+        numOfBtn = num;
+    }
+    closingOthers.addEventListener("mouseenter", () =>{closingOthers.style.backgroundColor = "rgba(0,0,0,0)"; setTimeout(() => closingOthers.style.display = "none", 0.2 * 1000);});
+</script>
+<!-- карусель -->
+<script>
+    // leftBtn.addEventListener("click",() => onFocus(0))
+    // rightBtn.addEventListener("click",() => onFocus(1))
+    let screenNum = 0;
+    const screenArr = document.getElementsByClassName("screensh-container");
+    let displaySet = "block";
+
+    function onScreens(){
+        for(i=0; i<screenArr.length;i++){
+            screenArr[i].style.display = "none";
+        }
+        if (screenNum !=0){
+            for(i = -1;i < 2;i++){
+                screenArr[screenNum+i].style.display = displaySet;
+            }
+        }
+        else{
+            for(i = 0;i < 2;i++){
+                screenArr[screenNum+i].style.display = displaySet;
+            }
+        }
+    }
+    //пользователь нажимает - картинка сейчас выключается, ставится класс, включающий анимацию перелистывания следующей картинки
+    function flipInFront(){
+        screenArr[screenNum].classList.add("anim-off-left");
+        screenNum++;
+        screenArr[screenNum].classList.add("anim-on-right");
+        onScreens();
+    }
+    function flipInBack(){
+        screenArr[screenNum].classList.add("anim-off-right");
+        screenNum--;
+        screenArr[screenNum].classList.add("anim-on-left");
+        onScreens();
+    }
+    rightBtn.addEventListener("click",flipInFront);
+    leftBtn.addEventListener("click",flipInBack);
 </script>
 </html>

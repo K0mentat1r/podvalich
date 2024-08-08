@@ -1,4 +1,7 @@
 
+:root{
+    --img-btn-width: 30px;
+}
 img{
     max-width: 70%;
     min-width: 70%;
@@ -9,20 +12,72 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 100vw;
+}
+#closingOthers{
+    z-index: 15;
+    width: 100vw;
+    /* высота ставится черещ скрипты */
+    transition: background-color 0.2s;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.site-name{
+    margin: calc(10vh - 10px) 0;
+    color: var(--standart-green);
+}
+.screenshots-container{
+    display: grid;
+    width: 100vw;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 1fr;
 }
 #screenshotsBody{
     margin:0;
     padding: 0;
-    border-radius: 32px;
-    border: 1vw var(--standart-grey) solid;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 16;
+}
+.screensh-container img{
+    border: 10px var(--standart-grey) solid;
+    border-radius: 25px;
 }
 .img-btn{
     position: absolute;
     display: flex;
     border-radius: 360px;
-    background-color:#444138a6;
-    width: 30px;
-    height: 30px;
+    background-color:#393844d0;
+    width: var(--img-btn-width);
+    height: var(--img-btn-width);
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+.btn-arrow-right{
+    transform: rotate(180deg);
+}
+.btn-arrow{
+    width: auto;
+    height: calc(var(--img-btn-width) - (var(--img-btn-width)/3));
+}
+.img-btn:hover{
+    background-color: #44413879;
+}
+@keyframes animFlipFront {
+    0%{
+        transform: translateX(calc(100vw + 100px));
+    }
+    100%{
+        transform: translateX(calc(18%-100vw));
+    }
 }
