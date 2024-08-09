@@ -23,18 +23,6 @@
             <div class="in-burger"></div>
         </div>
     </header>
-    <script>
-        let userScreenWidth = document.documentElement.clientWidth;
-        let headers= document.querySelectorAll('header')
-        let mrgnRight = 20;
-        if (userScreenWidth < 717){
-            mrgnRight = 10;
-        }
-        for(i=0;i<headers.length;i++){
-            headers[i].style.width= userScreenWidth - mrgnRight + "px";
-            headers[i].style.width-="2vw";
-        }
-    </script>
     <main id="content">
         <div id="closingOthers">
 
@@ -76,9 +64,7 @@
         let imageRectTop = imageRect.top + window.pageYOffset; //нужно, чтобы кнопки вставали ровно, без учета прокрутки
         let btnMargin = 20;
         
-        // leftBtn.style.left = imageRect.x + leftBtn.offsetWidth/2+ btnMargin+"px";
-        // rightBtn.style.left = imageRect.right - rightBtn.offsetWidth - btnMargin +"px";
-        leftBtn.style.left = leftBtn.offsetWidth/2+ btnMargin+"px";
+        leftBtn.style.left = leftBtn.offsetWidth - btnMargin/2+"px";
         rightBtn.style.left = image[0].offsetWidth - rightBtn.offsetWidth - btnMargin +"px";
         //криво, нужно переписать (две строчки сверху). UDP: криво, становится правая кнопка, если страница загружена не с 0 прокрутки по y
         leftBtn.style.top = image[0].offsetHeight/2 + "px";
@@ -129,7 +115,7 @@
 
     leftBtn.addEventListener("click", slideLeft);
 
-    document.addEventListener("keydown", function(event){
+    document.addEventListener("keydown", function(event){ //управление клавиатурой
         if (event.key == "ArrowLeft"){
             usingKeys = true;
             onFocus(0);
@@ -147,15 +133,23 @@
         console.log(event.key);
     });
 
-    // document.addEventListener("mousemove",function(event){
-    //     if (event/)
-    //     usingKeys = false;
-    // });
-
-    rightBtn.addEventListener("click", slideRight);
-
-    if (!usingKeys){
-        closingOthers.addEventListener("mouseenter", offFocus);
+    function unUsingKeys(){ //функция, чтобы не писать одно и тоже два раза
+        if (usingKeys){
+            usingKeys = false;
+            offFocus();
+        }
     }
+
+    document.addEventListener("mousemove",unUsingKeys); //если  использовали стрелочки для переключения и подвигали мышкой - выключаем затемнение
+    document.addEventListener("scroll",unUsingKeys); //если  использовали стрелочки для переключения и прокрутили страницу (вниз или вверх) - выключаем затемнение
+
+    closingOthers.addEventListener("mouseenter", function(){ //если перелистывали картинки кнопками (на картинке), то при выходе за скрин выключаем затемение
+        if(!usingKeys){
+            offFocus();
+        }
+    });
+
+    rightBtn.addEventListener("click", slideRight); 
 </script>
+<script src="js/header.js"></script>
 </html>

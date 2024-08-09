@@ -508,26 +508,8 @@
     .section-hello__img{
         width: 400px;
     }
-    h1{
-        font-size: 25px;
-    }
     .section-about__text{
         font-size: 25px;
-    }
-    .footer-top{
-        margin-bottom: 10px;
-    }
-    #contactMeBody{
-        flex-direction: column;
-    }
-    #contactMe-btn1{
-        border-radius: 18px 18px 0 0;
-    }
-    #contactMe-btn1 h2{
-        padding-right: 8px;
-    }
-    #contactMe-btn2{
-        border-radius: 0 0 18px 18px;
     }
     .section-org__content{
         grid-template-columns: 1fr 1fr;
@@ -599,45 +581,16 @@
 } */
 
 @media (max-width: 717px){
-    header{
-        padding: 30px 10px;
-        justify-content: space-around;
-    }
     #section-parts__content-up{
         min-width: 80%;
         max-width: 80%;
     }
 }
-@media (max-width: 717px) and (min-width: 561px){
-    #main-header .burger-menu{
-        width: 39px;
-        margin-right: 10px;
-    }
-    header{
-        padding: 30px 10px;
-    }
-}
 @media (max-width: 561px){
-    h1{
-        text-align: center;
-    }
-    .header__links{
-        gap: 10px;
-    }
-    .header__links a{
-        font-size: 17px;
-    }
-    #main-header .burger-menu, #second-header .burger-menu{
+    #second-header .burger-menu{
         width: 40px;
         height: 16px;
         margin: 0 10px;
-    }
-    header{
-        padding: 20px 5px;
-    }
-    .footer-top{
-        display: flex;
-        flex-direction: column;
     }
     .section-name-container{
         flex-direction: column-reverse;
@@ -679,18 +632,6 @@
     }
 }
 @media (max-width: 457px){
-    .header__links{
-        gap: 7px;
-    }
-    .header__links a{
-        font-size: 15px;
-    }
-    .button__discord-logo {
-        width: 40px;
-    }
-    h1{
-        text-align: center;
-    }
     .sub-section__open{
         width: 25px;
         height: 13px;
@@ -715,14 +656,8 @@
     }
 }
 @media (max-width:400px){
-    p, figcaption, a, #section-about p, .section-hello__discord-btn p{
+    #section-about p, .section-hello__discord-btn p{
         font-size: 15px;
-    }
-    h2,h3{
-        font-size: 20px;
-    }
-    h1{
-        font-size: 25px;
     }
     .section__player-name{
         font-size: 25px;
@@ -764,9 +699,6 @@
     }
 }
 @media (max-width:390px){
-    .links__links-to-sect:nth-child(4) {
-        display: none;
-    }
     .grid-left{
         width: calc(100% - 10px);
     }
