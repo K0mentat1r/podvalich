@@ -1,10 +1,12 @@
 
 :root{
     --img-btn-width: 30px;
+    --img-width: 1200px;
+    --img-height: calc(var(--img-width)/1.78 - 22px);
 }
 img{
-    max-width: 70%;
-    min-width: 70%;
+    max-width: 95%;
+    min-width: 95%;
     height: auto;
     border-radius: 20px;
 }
@@ -14,12 +16,11 @@ img{
     justify-content: center;
     flex-direction: column;
     width: 100vw;
-    height: 100vw;
 }
 #closingOthers{
     z-index: 15;
     width: 100vw;
-    /* высота ставится черещ скрипты */
+    height: 100vh;
     transition: background-color 0.2s;
     position: absolute;
     top:0;
@@ -29,28 +30,39 @@ img{
     margin: calc(10vh - 10px) 0;
     color: var(--standart-green);
 }
-.screenshots-container{
-    display: grid;
-    width: 100vw;
-    height: fit-content;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: 1fr;
-}
 #screenshotsBody{
-    margin:0;
-    padding: 0;
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    width: var(--img-width);
     z-index: 16;
 }
 .screensh-container img{
     border: 10px var(--standart-grey) solid;
     border-radius: 25px;
+    width: var(--img-width);
+    height: var(--img-height);
+    /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
+    display: block;
 }
+
+#screenshots{
+    width: var(--img-width);
+    overflow: hidden;
+}
+#need{
+    height: auto;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
+    /* http://davidwalsh.name/remove-whitespace-inline-block */
+    font-size: 0;
+}
+.screensh-container{
+    display: inline-block;
+}
+
 .img-btn{
     position: absolute;
     display: flex;
