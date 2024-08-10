@@ -11,18 +11,21 @@
 </head>
 <body>
     <header id="main-header">
-        <div class="header__links">
-            <a href="#section-about" class="links__links-to-sect">О НАС</a>
-            <a href="#section-city" class="links__links-to-sect">ГОРОД</a>
-            <a href="#section-authority" class="links__links-to-sect">ВЛАСТЬ</a>
-            <!-- <a href="#" class="links__links-to-sect">НОВОСТИ</a> -->
-            <a href="#section-org" class="links__links-to-sect">ОРГАНИЗАЦИИ</a>
-            <a href="#section-FAQ" class="links__links-to-sect">FAQ</a>
-        </div>
+        <a class="site-logo-container" href="index.html">
+            <img src="img/logo.png" class="site-logo">
+        </a>
         <div class="burger-menu">
             <div class="in-burger"></div>
         </div>
     </header>
+    <div id="menu" class="popup">
+        <div id="menuContainer" class="popup__container">
+            <div id="menuBody" class="popup__body">
+                <a class="menu-link" href="index.html">Главная</a>
+                <a class="menu-link" href="screenshots.html">Галерея</a>
+            </div>
+        </div>
+    </div>
     <main id="content">
         <div id="closingOthers">
 
@@ -48,108 +51,39 @@
             <div class="img-btn" id="rightBtn">
                 <img src="screenshots/icons/arrow.svg" class="btn-arrow btn-arrow-right">
             </div>
-            <!-- <div id="screenshAuthorContainer">
+            <div id="screenshAuthorContainer">
                 <img id="">
                 <p id="screenshAuthorName"></p>
-            </div> -->
+            </div>
         </div>
     </main>
+    <footer>
+        <div class="footer-top">
+            <div>
+                <p>No copyright, made by <span id="contactMeToBtn">ini_ga</span></p>
+                <p><span>Этот сайт был сделан бесплатно</span>, поэтому можете поддержать<br>меня донатом (мне будет приятно): 2202208082870099 (Арсений К).<br>Только в комментарий к донату пишите что-нибудь. Спасибо!</p>
+            </div>
+            <div id="contactMeBody">
+                <a href="https://discordapp.com/users/797153328714350703/" target="_blank"><button class="contactMe-btn" id="contactMe-btn1"><img src="img/discord-logo.png" class="button__discord-logo"><h2>Связаться со мной</h2></button></a>
+                <a href="https://github.com/K0mentat1r/podvalich" target="_blank"><button class="contactMe-btn" id="contactMe-btn2"><img src="img/github-logo.svg" class="button__discord-logo"><h2>Репозиторий сайта</h2></button></a>
+            </div>
+        </div>
+    </footer>
 </body>
-<!-- ставим кнопки для перелистывания в нужное место -->
- <!-- нужно сделать, чтобы отрабатывал только после загрузки страницы -->
 <script>
-    document.addEventListener('DOMContentLoaded', function(){
-        let image = document.getElementsByClassName("screenshot");
-        let imageRect = image[0].getBoundingClientRect();
-        let imageRectTop = imageRect.top + window.pageYOffset; //нужно, чтобы кнопки вставали ровно, без учета прокрутки
-        let btnMargin = 20;
-        
-        leftBtn.style.left = leftBtn.offsetWidth - btnMargin/2+"px";
-        rightBtn.style.left = image[0].offsetWidth - rightBtn.offsetWidth - btnMargin +"px";
-        //криво, нужно переписать (две строчки сверху). UDP: криво, становится правая кнопка, если страница загружена не с 0 прокрутки по y
-        leftBtn.style.top = image[0].offsetHeight/2 + "px";
-        rightBtn.style.top = image[0].offsetHeight/2 + "px";
-    })
-</script>
-<!-- затемняем все, кроме screenshotsBody, если нажали на кнопку, увелись курсором с screenshotsBody - делаем как было -->
-<script>
-    closingOthers.style.display = "none";
-
-    let btns = document.getElementsByClassName("img-btn");
-    let numOfBtn = 0;
-    leftBtn.addEventListener("click",() => onFocus(0));
-    rightBtn.addEventListener("click",() => onFocus(1));
-
-    function onFocus(num){
-        closingOthers.style.display = "block";
-        setTimeout(() => closingOthers.style.backgroundColor = "rgba(0,0,0,.50)", 0.01 * 1000); //нужна задержка, иначе появистя резко
-        numOfBtn = num;
-    }
-    function offFocus(){
-        closingOthers.style.backgroundColor = "rgba(0,0,0,0)"; 
-        setTimeout(() => closingOthers.style.display = "none", 0.2 * 1000);
-    }
+    //отступы сверху и снизу у content, в зависимости от высоты хидера (снизу ставится удвоенная высота хидера)
+    content.style.margin = (document.getElementById("main-header").offsetHeight + "px") + " 0" + " " + ((document.getElementById("main-header").offsetHeight) * 2 + "px") + " 0";
+    content.style.width = document.documentElement.clientWidth - 5 + "px"; //ширина content делается с учетом overflow-y, иначе другие элементы будут растягиваться не по всей высоте
 </script>
 <!-- карусель -->
+<script src="js/screenshot.js"></script>
+
+<!-- ставим кнопки для перелистывания в нужное место -->
 <script>
-    let width = 1200 + 20; // ширина картинки + ещё что то, крч +20 надо чтобы при прокрутке ничего не уезжало и вставало ровно
-    let count = 1;// видимое количество изображений
-
-    let list = document.getElementById("need");
-    let listElems = document.getElementsByClassName("screensh-container");
-
-    let position = 0; // положение ленты прокрутки
-
-    function slideRight(){ // сдвиг вправо
-        position -= width * count;
-        position = Math.max(position, -width * (listElems.length - count));
-        list.style.marginLeft = position + 'px';
-    }
-    function slideLeft(){ // сдвиг влево
-        position += width * count;
-        position = Math.min(position, 0)
-        list.style.marginLeft = position + 'px';
-    }
-
-    let usingKeys = false;
-
-    leftBtn.addEventListener("click", slideLeft);
-
-    document.addEventListener("keydown", function(event){ //управление клавиатурой
-        if (event.key == "ArrowLeft"){
-            usingKeys = true;
-            onFocus(0);
-            slideLeft();
-        }
-        if (event.key == "ArrowRight"){
-            usingKeys = true;
-            onFocus(1);
-            slideRight();
-        }
-        if (event.key == "Escape" || event.key == "Backspace"){
-            offFocus();
-            usingKeys = false;
-        }
-        console.log(event.key);
-    });
-
-    function unUsingKeys(){ //функция, чтобы не писать одно и тоже два раза
-        if (usingKeys){
-            usingKeys = false;
-            offFocus();
-        }
-    }
-
-    document.addEventListener("mousemove",unUsingKeys); //если  использовали стрелочки для переключения и подвигали мышкой - выключаем затемнение
-    document.addEventListener("scroll",unUsingKeys); //если  использовали стрелочки для переключения и прокрутили страницу (вниз или вверх) - выключаем затемнение
-
-    closingOthers.addEventListener("mouseenter", function(){ //если перелистывали картинки кнопками (на картинке), то при выходе за скрин выключаем затемение
-        if(!usingKeys){
-            offFocus();
-        }
-    });
-
-    rightBtn.addEventListener("click", slideRight); 
 </script>
 <script src="js/header.js"></script>
+<script src="js/other-script.js"></script>
+<script> //комментарий в консоли, можно спокойно удалять
+    console.log("Ошибка выше - это нормально, т.к. на этой странице нет второго хидера");
+</script>
 </html>

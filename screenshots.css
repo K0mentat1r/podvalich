@@ -1,8 +1,15 @@
 
 :root{
     --img-btn-width: 30px;
-    --img-width: 1200px;
-    --img-height: calc(var(--img-width)/1.78 - 22px);
+    --img-width:0; /*скрипт screenshots.js устанавливает значение*/
+    /* --img-height: calc(var(--img-width)/1.78 - 22px); */
+    --img-border-width:0; /*скрипт screenshots.js устанавливает значение*/
+}
+html{
+    overflow-y: scroll;
+}
+#main-header{
+    transition: opacity 0.2s;
 }
 img{
     max-width: 95%;
@@ -15,37 +22,39 @@ img{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
+
 }
 #closingOthers{
-    z-index: 15;
+    z-index: var(--header-z-index)+1;
     width: 100vw;
-    height: 100vh;
     transition: background-color 0.2s;
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
 }
 .site-name{
     margin: calc(10vh - 10px) 0;
     color: var(--standart-green);
+    text-align: center;
 }
 #screenshotsBody{
     position: relative;
     width: var(--img-width);
-    z-index: 16;
+    z-index: var(--header-z-index)+2;
 }
 .screensh-container img{
-    border: 10px var(--standart-grey) solid;
+    border: var(--img-border-width) var(--standart-grey) solid;
     border-radius: 25px;
     width: var(--img-width);
-    height: var(--img-height);
+    height: auto;
     /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
     display: block;
 }
 
 #screenshots{
     width: var(--img-width);
+    border-radius: 25px;
     overflow: hidden;
 }
 #need{
@@ -53,10 +62,7 @@ img{
     width: 9999px;
     margin: 0;
     padding: 0;
-    list-style: none;
     transition: margin-left 250ms;
-    /* удаляем пустое пространство между элементами li, у которых установлен inline-block */
-    /* http://davidwalsh.name/remove-whitespace-inline-block */
     font-size: 0;
 }
 .screensh-container{
@@ -91,5 +97,10 @@ img{
     }
     100%{
         transform: translateX(calc(18%-100vw));
+    }
+}
+@media (max-width: 717px){
+    header{
+        padding: 30px 0px;
     }
 }

@@ -17,6 +17,7 @@
     --light-grey: #c5c5ca;
 
     --header-width: 0;
+    --header-z-index:10;
 }
 html{
     scroll-behavior: smooth;
@@ -64,6 +65,13 @@ button{
 .black-text-in-article p,h4,h3{
     color:black;
 }
+.site-logo-container{
+    width: 60px;
+}
+.site-logo{
+    border-radius: 0;
+    margin-left: 30px;
+}
 .img-help{
     width: auto;
     height: auto;
@@ -98,7 +106,7 @@ header{
     backdrop-filter: blur(5px);
     padding: 20px 0;
     /* ширина ставится через скрипты */
-    z-index: 10;
+    z-index: var(--header-z-index);
 }
 .header__links{
     display: flex;
@@ -152,7 +160,7 @@ header{
     width: 100vw;
     height: 100vw;
     display: none;
-    z-index: 3;
+    z-index: calc(var(--header-z-index) - 1);
 }
 .popup__body{
     display: flex;
@@ -284,6 +292,8 @@ footer p>span{
 }
 .button__discord-logo{
     width: 50px;
+    max-width: none;
+    min-width: auto;
 }
 @keyframes animMenuOpen{
     0%{
