@@ -4,6 +4,10 @@
     --img-width:0; /*скрипт screenshots.js устанавливает значение*/
     /* --img-height: calc(var(--img-width)/1.78 - 22px); */
     --img-border-width:0; /*скрипт screenshots.js устанавливает значение*/
+
+    --author-container-height:34px;
+    --author-container-padding-top-btm: 5px;
+    --author-container-padding-left: 20px;
 }
 html{
     overflow-y: scroll;
@@ -43,7 +47,7 @@ img{
     width: var(--img-width);
     z-index: var(--header-z-index)+2;
 }
-.screensh-container img{
+.screenshot{
     border: var(--img-border-width) var(--standart-grey) solid;
     border-radius: 25px;
     width: var(--img-width);
@@ -63,7 +67,6 @@ img{
     margin: 0;
     padding: 0;
     transition: margin-left 250ms;
-    font-size: 0;
 }
 .screensh-container{
     display: inline-block;
@@ -91,6 +94,35 @@ img{
 .img-btn:hover{
     background-color: #44413879;
 }
+.screen__author-container{
+    width: fit-content;
+    height: var(--author-container-height);
+    padding: var(--author-container-padding-top-btm) var(--author-container-padding-left);
+    background-color: #393844a2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    bottom: calc((var(--author-container-height) + (var(--author-container-padding-top-btm)* 2)) * 1.7);
+    left: calc(var(--author-container-padding-left) * 2);
+    gap: 1vw;
+    z-index: calc(var(--header-z-index)+3);
+}
+.screen__author-head{
+    width: 30px;
+    height: 30px;
+    min-width: auto;
+    border: none;
+    border-radius: 0;
+}
+.screen__author-name{
+    margin: 0;
+    color:white;
+}
+#authorContainerForMobile{
+    display: none;
+}
 @keyframes animFlipFront {
     0%{
         transform: translateX(calc(100vw + 100px));
@@ -102,5 +134,21 @@ img{
 @media (max-width: 717px){
     header{
         padding: 30px 0px;
+    }
+    .screen__author-container{
+        left: calc(var(--author-container-padding-left) * 1.5);
+    }
+}
+@media (max-width: 560px){
+    .screen__author-container{
+        display: none;
+        bottom: 0;
+        left: 0;
+    }
+    #authorContainerForMobile{
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
     }
 }
