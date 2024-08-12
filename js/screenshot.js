@@ -1,4 +1,4 @@
-let imgWidth = 1280; //ширина картинок
+let imgWidth = 1200; //ширина картинок
 let imgBorderWidth = 10; //ширина border'а у картинок
 let imgMargin = 20; //отступ у картинок (по бокам, чтобы не занимали всю страницу)
 let imgMarginleft = 3; //марджин слева, чтобы центрировать картинки
@@ -25,7 +25,7 @@ document.getElementById("screenshots").style.marginLeft = imgMarginleft + "px";
 
 console.log("ширина окна пользователя = "+window.innerHeight);
 
-let width = imgWidth + (imgBorderWidth * 2) + 5; //вычисляем длину картинки с учетом border'а с двух сторон картинки (+5 чтобы картинки вставали ровно)
+let width = imgWidth + (imgBorderWidth * 2); //вычисляем длину картинки с учетом border'а с двух сторон картинки (+5 чтобы картинки вставали ровно)
 let count = 1;// видимое количество изображений
 
 let list = document.getElementById("need");
@@ -41,7 +41,7 @@ let mainHeader = document.getElementById("main-header");
 let authorName={ //что то типо БД
     ini_ga:{
         "text": "Ini_ga", //имя автора, которое будет отображаться
-        "link": "img/player-heads/ini_ga.png", //ссылка на его голову (от скина)
+        "link": "img/player-heads/ini_ga.webp", //ссылка на его голову (от скина)
         "screens_num": [0,1,2], //номера скринов, сделанных этим игроком
     },
     default:{

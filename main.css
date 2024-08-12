@@ -207,6 +207,9 @@ header{
     min-width: 400px;
     min-height: 400px;
 }
+.menu-link{
+    margin: 10px auto;
+}
 
 .section-name-container{
     width: 50%;
